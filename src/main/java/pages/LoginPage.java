@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import utils.Constants;
 
 public class LoginPage {
     private WebDriver driver;
@@ -17,11 +18,11 @@ public class LoginPage {
     }
 
     public void enterUsername(String username){
-        driver.findElement(usernameField).sendKeys("username");
+        driver.findElement(usernameField).sendKeys(username);
     }
 
     public void enterPassword(String password){
-        driver.findElement(passwordField).sendKeys("password");
+        driver.findElement(passwordField).sendKeys(password);
     }
 
     public void clickLogin(){
@@ -47,6 +48,13 @@ public class LoginPage {
         enterPassword(password);
         clickLogin();
         verifyLoginDetails();
+    }
+
+    public void validLogin(){
+
+        enterUsername(Constants.CORRECTUSER);
+        enterPassword(Constants.CORRECTPASSWORD);
+        clickLogin();
     }
 }
 
