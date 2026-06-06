@@ -14,12 +14,12 @@ public class LoginTest extends BaseTest {
     public void validLoginTest() {
         driver.get("https://www.saucedemo.com/");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.validLogin();
     }
     @Test
     public void invalidLoginTest(){
         driver.get("https://www.saucedemo.com/");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.notlogin("ssasdadasd","secret_sauce");
+        loginPage.notlogin();
     }
 }
