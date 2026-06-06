@@ -37,15 +37,9 @@ public class LoginPage {
 
     }
 
-    public void login(String username, String password){
-        enterUsername(username);
-        enterPassword(password);
-        clickLogin();
-    }
-
-    public void notlogin(String username, String password){
-        enterUsername(username);
-        enterPassword(password);
+    public void notlogin(){
+        enterUsername(Constants.INCORRECTUSER);
+        enterPassword(Constants.INCORRECTPASSWORD);
         clickLogin();
         verifyLoginDetails();
     }
